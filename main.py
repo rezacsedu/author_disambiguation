@@ -25,16 +25,15 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense,Dropout
-from utils import *
+from src.utils import *
 
-## Load data and create necessary dataframes
-data = "data.json" 
-labels = "ground-truth.json" 
-persons = "persons.json"
+data = "data/data.json" 
+labels = "data/ground-truth.json" 
+persons = "data/persons.json"
 
 df, df_ground_truth, df_person, d_labels, author_mapping_dict, id_author_mapping_dict = prepareData(data, labels, persons)
 
-# Some EDA
+## Some EDA
 # contribution distribution
 df_ground_truth.groupby("personId").count().sort_values(by=['contributionId']).plot()
     
@@ -80,11 +79,13 @@ np.argmax(cv_model.predict_proba(d_vec), axis=1)
 y_res = [id_author_mapping_dict[i] for i in d_labels]
 df["pred"] = y_res
 
-df.to_csv("full_output_matches.tsv", sep ='\t', index=False)
-df[["index", "contribution_id", "features", "personId", "pred"]].to_csv("output_matches.tsv", sep ='\t', index=False)
+df.to_csv("results/full_output_matches.tsv", sep ='\t', index=False)
+df[["index", "contribution_id", "features", "personId", "pred"]].to_csv("results/output_matches.tsv", sep ='\t', index=False)
 
 ## Let's randomly checks some rows to see how the model predicted
-sm_df = pd.read_csv("output_matches.tsv", sep ='\t')
+sm_df = pd.read_csv("results/output_matches.tsv", sep ='\t')
 sm_df.tail()
+
+
 
 
