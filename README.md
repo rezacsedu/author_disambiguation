@@ -28,14 +28,19 @@ Therefore, encoding the features myself using TF-IDF or counter vectorized (NLP 
 In order to use the repo with, please do the following:
 
 **Step-1**: clone the repo 
+```
 $ git clone https://github.com/rezacsedu/author_disambiguation.git
+```
 
 **Step-2**: Install required dependencies
+```
 $ cd author_disambiguation/
 $ pip3 install -r requirements.txt 
-
+```
 **Step-3**: Run the main.py file (from inside the author_disambiguation folder) to see the result
+```
 $ python3 main.py
+```
 
 **Step-4**: Use the detailed notebook for more detail explanations of the steps and results. 
 
