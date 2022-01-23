@@ -18,11 +18,11 @@ The solution should be an algorithm or model which allows us to disambiguate peo
 - Explain how your solution scales when applied to millions of data. You donn't have to develop a scalable solution, but you may come up with a proposal.
 
 ### Problem statement and initial assumpations
-Initally I thought of using spacy or BERT language models (even I did try it for fun, but I've commented them out for now). However, as the features are lacking the surrounding context, using more sophsticated (e.g., NLP trasnfer learning via Word2Vec/GloVe/FastTExt or BERT-based) wouldn't improve performance. 
+Initially, I thought, I'd need some sort of word sense disambiguation (word sense disambigation is about, within sentences, finding out what entity sense is. For the sentence, "I would like to eat my apple", apple is the entity used to refer food, but not for Apple (entity organisation), due to the action of eat). Therefore, I thought of using spacy or BERT language models (even I did try it for fun, but I've commented them out for now). However, as the columns can be considered just features and no contextual sentences less relevant, it turns out that the problem is more just entity linking of person to specific features to disambiguate different people. 
 
-I also originally thought the Spacy approach is going to be useful to do some word sense disambiguation as I thought there would be free texts (e.g., abstract column of the speaker) with the speaker entity that can be plucked or we could just use for full name to see who is who. Eventually, I didn't go for this approach this as this wouldn't create a model approach we could use just a closest match procedure to name. 
+In other words, as the features are lacking the surrounding context, using more sophsticated (e.g., NLP trasnfer learning via Word2Vec/GloVe/FastTExt or BERT-based) wouldn't improve performance. Further, as the columns can be considered just features and no contextual sentences less relevant, it turns out that the problem is more just entity linking of person to specific features to disambiguate different people. 
 
-Therefore, encoding the features myself using TF-IDF or counter vectorized (NLP feature extractor from sklearn library) for moderate performance. In my understanding, this is less a word sense disambigation task, just entity linking (cf. https://link.springer.com/article/10.1007/s11192-021-03951-w). 
+Eventually, I didn't go for this approach this as this wouldn't create a model approach we could use just a closest match procedure to name. Therefore, I did encoding tof features using TF-IDF or counter vectorized (NLP feature extractor from sklearn library) for moderate performance. In my understanding, this is less a word sense disambigation task, just entity linking (cf. https://link.springer.com/article/10.1007/s11192-021-03951-w). 
 
 ## How to use the repo
 In order to use the repo with, please do the following:
