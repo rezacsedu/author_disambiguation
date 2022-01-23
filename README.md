@@ -24,8 +24,14 @@ In other words, as the features are lacking the surrounding context, using more 
 
 Eventually, I didn't go for this approach this as this wouldn't create a model approach we could use just a closest match procedure to name. Therefore, I did encoding tof features using TF-IDF or counter vectorized (NLP feature extractor from sklearn library) for moderate performance. In my understanding, this is less a word sense disambigation task, just entity linking (cf. https://link.springer.com/article/10.1007/s11192-021-03951-w). 
 
-## How to use the repo
-In order to use the repo with, please do the following:
+## How to use the repo? 
+The directory has the following structure:
+
+![Directory structure](tree.png)
+
+In this structure: i) 'scr' folder contains utility functions (see utils.py that prepares the data and returns an cross-vlidatbalble estimator), ii) 'results' folder contains the results for naive validation, iii) 'data' folder, as the title suggests, contain the provided datasets for this task. 
+
+Now, in order to use the repo with, please do the following:
 
 **Step-1**: clone the repo 
 ```
