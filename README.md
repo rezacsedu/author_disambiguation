@@ -24,6 +24,23 @@ I also originally thought the Spacy approach is going to be useful to do some wo
 
 Therefore, encoding the features myself using TF-IDF or counter vectorized (NLP feature extractor from sklearn library) for moderate performance. In my understanding, this is less a word sense disambigation task, just entity linking (cf. https://link.springer.com/article/10.1007/s11192-021-03951-w). 
 
+## How to use the repo
+In order to use the repo with, please do the following:
+
+**Step-1**: clone the repo 
+$ git clone https://github.com/rezacsedu/author_disambiguation.git
+
+**Step-2**: Install required dependencies
+$ cd author_disambiguation/
+$ pip3 install -r requirements.txt 
+
+**Step-3**: Run the main.py file (from inside the author_disambiguation folder) to see the result
+$ python3 main.py
+
+**Step-4**: Use the detailed notebook for more detail explanations of the steps and results. 
+
+**Step-5**: Conver the standalone notebook as a web app for easy accessibility. 
+
 ## Analysis of the solution - pros and cons
 Although getting an f1-score of 71% is not good, unfortunately. On a positive note: getting an MCC score of above 85% suggests that the predictions were strongly correlated with the ground truth, yielding a Pearson product-moment correlation coefficient.
 Further, this solution has not take into consideration all the features. Besides, names are merged with other features, which shouldn't be the ideal case. We could see if having a name column (i.e., full-name) can give some hints of unique contributions.   
